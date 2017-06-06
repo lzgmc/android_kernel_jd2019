@@ -16,6 +16,7 @@
  */
 #define __UNIQUE_ID(prefix) __PASTE(__PASTE(__UNIQUE_ID_, prefix), __COUNTER__)
 
+<<<<<<< HEAD
 #ifdef CONFIG_LTO_CLANG
 #ifdef CONFIG_FTRACE_MCOUNT_RECORD
 #define __norecordmcount \
@@ -32,6 +33,14 @@
 #if __has_feature(address_sanitizer)
 #define __SANITIZE_ADDRESS__
 #endif
+=======
+/*
+ * GCC does not warn about unused static inline functions for
+ * -Wunused-function.  This turns out to avoid the need for complex #ifdef
+ * directives.  Suppress the warning in clang as well.
+ */
+#define inline inline __attribute__((unused))
+>>>>>>> 94cc698fdaa7 (compiler, clang: suppress warning for unused static inline functions)
 
 /* Clang doesn't have a way to turn it off per-function, yet. */
 #ifdef __noretpoline
