@@ -39,8 +39,13 @@
  * -Wunused-function.  This turns out to avoid the need for complex #ifdef
  * directives.  Suppress the warning in clang as well.
  */
+<<<<<<< HEAD
 #define inline inline __attribute__((unused))
 >>>>>>> 94cc698fdaa7 (compiler, clang: suppress warning for unused static inline functions)
+=======
+#undef inline
+#define inline inline __attribute__((unused)) notrace
+>>>>>>> f276b50c3a5b (compiler, clang: properly override 'inline' for clang)
 
 /* Clang doesn't have a way to turn it off per-function, yet. */
 #ifdef __noretpoline
