@@ -18,6 +18,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef CONFIG_LTO_CLANG
 #ifdef CONFIG_FTRACE_MCOUNT_RECORD
 #define __norecordmcount \
@@ -50,6 +51,11 @@
 
 =======
 >>>>>>> 29524a9d42f6 (compiler, clang: always inline when CONFIG_OPTIMIZE_INLINING is disabled)
+=======
+#undef __no_sanitize_address
+#define __no_sanitize_address __attribute__((no_sanitize("address")))
+
+>>>>>>> 50bed434ad9c (kasan: add no_sanitize attribute for clang builds)
 /* Clang doesn't have a way to turn it off per-function, yet. */
 #ifdef __noretpoline
 #undef __noretpoline

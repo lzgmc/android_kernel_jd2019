@@ -174,7 +174,7 @@ function update_remote() {
     # Add remote if it isn't already present
     cd "${KERNEL_FOLDER}" || die "Could not change into ${KERNEL_FOLDER}!"
 
-    if git fetch --tags https://kernel.googlesource.com/pub/scm/linux/kernel/git/stable/linux.git/; then
+    if git fetch --tags https://github.com/android-linux-stable/msm-4.9.git; then
         success "linux-stable updated successfully!"
     else
         die "linux-stable update failed!"
