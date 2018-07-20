@@ -245,7 +245,6 @@ static inline int arm64_get_ssbd_state(void)
 #endif
 }
 
-
 #ifdef CONFIG_ARM64_SSBD
 void arm64_set_ssbd_mitigation(bool state);
 #else
